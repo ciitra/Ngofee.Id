@@ -1,3 +1,5 @@
+using Ngofee.Id.Views;
+
 namespace Ngofee.Id
 {
     public partial class V_FormLogin : Form
@@ -5,8 +7,8 @@ namespace Ngofee.Id
         public V_FormLogin()
         {
             InitializeComponent();
-            button1.MouseEnter += (s, e) => button1.BackgroundImage = Properties.Resources.loginEnter;
-            button1.MouseLeave += (s, e) => button1.BackgroundImage = Properties.Resources.loginLeave;
+            btnLogin.MouseEnter += (s, e) => btnLogin.BackgroundImage = Properties.Resources.loginEnter;
+            btnLogin.MouseLeave += (s, e) => btnLogin.BackgroundImage = Properties.Resources.loginLeave;
         }
 
         private void V_FormLogin_Load(object sender, EventArgs e)
@@ -21,6 +23,9 @@ namespace Ngofee.Id
 
         private void linkLabelRgt_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
+            Register registerForm = new Register();
+            registerForm.Show();
+            this.Hide();
 
         }
     }

@@ -28,43 +28,44 @@
         /// </summary>
         private void InitializeComponent()
         {
-            textBox1 = new TextBox();
-            textBox2 = new TextBox();
-            button1 = new Button();
+            TBUsername = new TextBox();
+            TBPassword = new TextBox();
+            btnLogin = new Button();
             linkLabelRgt = new LinkLabel();
             SuspendLayout();
             // 
-            // textBox1
+            // TBUsername
             // 
-            textBox1.BackColor = Color.White;
-            textBox1.BorderStyle = BorderStyle.None;
-            textBox1.Location = new Point(830, 302);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(333, 20);
-            textBox1.TabIndex = 0;
+            TBUsername.BackColor = Color.White;
+            TBUsername.BorderStyle = BorderStyle.None;
+            TBUsername.Location = new Point(830, 302);
+            TBUsername.Name = "TBUsername";
+            TBUsername.Size = new Size(333, 20);
+            TBUsername.TabIndex = 0;
             // 
-            // textBox2
+            // TBPassword
             // 
-            textBox2.BackColor = Color.White;
-            textBox2.BorderStyle = BorderStyle.None;
-            textBox2.Location = new Point(830, 388);
-            textBox2.Name = "textBox2";
-            textBox2.Size = new Size(333, 20);
-            textBox2.TabIndex = 1;
+            TBPassword.BackColor = Color.White;
+            TBPassword.BorderStyle = BorderStyle.None;
+            TBPassword.Location = new Point(830, 388);
+            TBPassword.Name = "TBPassword";
+            TBPassword.Size = new Size(333, 20);
+            TBPassword.TabIndex = 1;
             // 
-            // button1
+            // btnLogin
             // 
-            button1.BackColor = Color.Transparent;
-            button1.BackgroundImageLayout = ImageLayout.Zoom;
-            button1.FlatAppearance.BorderSize = 0;
-            button1.FlatAppearance.MouseDownBackColor = Color.Transparent;
-            button1.FlatAppearance.MouseOverBackColor = Color.FromArgb(50, 0, 0, 0);
-            button1.FlatStyle = FlatStyle.Flat;
-            button1.Location = new Point(817, 470);
-            button1.Name = "button1";
-            button1.Size = new Size(360, 46);
-            button1.TabIndex = 2;
-            button1.UseVisualStyleBackColor = false;
+            btnLogin.BackColor = Color.Transparent;
+            btnLogin.BackgroundImage = Properties.Resources.loginLeave;
+            btnLogin.BackgroundImageLayout = ImageLayout.Zoom;
+            btnLogin.FlatAppearance.BorderSize = 0;
+            btnLogin.FlatAppearance.MouseDownBackColor = Color.Transparent;
+            btnLogin.FlatAppearance.MouseOverBackColor = Color.FromArgb(50, 0, 0, 0);
+            btnLogin.FlatStyle = FlatStyle.Flat;
+            btnLogin.Location = new Point(817, 470);
+            btnLogin.Name = "btnLogin";
+            btnLogin.Size = new Size(360, 46);
+            btnLogin.TabIndex = 2;
+            btnLogin.UseVisualStyleBackColor = false;
             // 
             // linkLabelRgt
             // 
@@ -87,9 +88,9 @@
             BackgroundImage = Properties.Resources.Login__6_;
             ClientSize = new Size(1262, 673);
             Controls.Add(linkLabelRgt);
-            Controls.Add(button1);
-            Controls.Add(textBox2);
-            Controls.Add(textBox1);
+            Controls.Add(btnLogin);
+            Controls.Add(TBPassword);
+            Controls.Add(TBUsername);
             Name = "V_FormLogin";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Login";
@@ -100,9 +101,9 @@
 
         #endregion
 
-        private TextBox textBox1;
-        private TextBox textBox2;
-        private Button button1;
+        private TextBox TBUsername;
+        private TextBox TBPassword;
+        private Button btnLogin;
         private LinkLabel linkLabelRgt;
     }
 }
