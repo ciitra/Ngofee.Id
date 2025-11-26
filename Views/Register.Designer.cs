@@ -28,20 +28,21 @@
         /// </summary>
         private void InitializeComponent()
         {
-            TBNamaRg = new TextBox();
+            TBUsernameRg = new TextBox();
             TBPasswordRg = new TextBox();
             TBEmailRg = new TextBox();
             TBNoTeleponRg = new TextBox();
             btnRegister = new Button();
             SuspendLayout();
             // 
-            // TBNamaRg
+            // TBUsernameRg
             // 
-            TBNamaRg.BorderStyle = BorderStyle.None;
-            TBNamaRg.Location = new Point(838, 238);
-            TBNamaRg.Name = "TBNamaRg";
-            TBNamaRg.Size = new Size(354, 20);
-            TBNamaRg.TabIndex = 0;
+            TBUsernameRg.BorderStyle = BorderStyle.None;
+            TBUsernameRg.Location = new Point(838, 240);
+            TBUsernameRg.Name = "TBUsernameRg";
+            TBUsernameRg.Size = new Size(354, 20);
+            TBUsernameRg.TabIndex = 0;
+            TBUsernameRg.TextChanged += TBUsernameRg_TextChanged;
             // 
             // TBPasswordRg
             // 
@@ -79,6 +80,7 @@
             btnRegister.Size = new Size(375, 46);
             btnRegister.TabIndex = 4;
             btnRegister.UseVisualStyleBackColor = false;
+            btnRegister.Click += BtnRegister_Click;
             // 
             // Register
             // 
@@ -90,7 +92,7 @@
             Controls.Add(TBNoTeleponRg);
             Controls.Add(TBEmailRg);
             Controls.Add(TBPasswordRg);
-            Controls.Add(TBNamaRg);
+            Controls.Add(TBUsernameRg);
             Name = "Register";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Register";
@@ -100,7 +102,7 @@
 
         #endregion
 
-        private TextBox TBNamaRg;
+        private TextBox TBUsernameRg;
         private TextBox TBPasswordRg;
         private TextBox TBEmailRg;
         private TextBox TBNoTeleponRg;

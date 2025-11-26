@@ -66,6 +66,7 @@
             btnLogin.Size = new Size(360, 46);
             btnLogin.TabIndex = 2;
             btnLogin.UseVisualStyleBackColor = false;
+            btnLogin.Click += btnLogin_Click;
             // 
             // linkLabelRgt
             // 

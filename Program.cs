@@ -1,3 +1,5 @@
+using Ngofee.Id.Views;
+
 namespace Ngofee.Id
 {
     internal static class Program
@@ -11,7 +13,8 @@ namespace Ngofee.Id
             // To customize application configuration such as set high DPI settings or default font,
             // see https://aka.ms/applicationconfiguration.
             ApplicationConfiguration.Initialize();
-            Application.Run(new V_FormLogin());
+            Application.Run(new LandingPage());
+
         }
     }
 }

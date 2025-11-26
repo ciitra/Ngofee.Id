@@ -15,6 +15,9 @@ namespace Ngofee.Id.Database
         {
             Env.Load();
             connStr = Environment.GetEnvironmentVariable("CONN_STR");
+
+            if (string.IsNullOrEmpty(connStr))
+                MessageBox.Show("Koneksi DB tidak ditemukan! Pastikan file .env ada dan variabel CONN_STR benar.");
         }
     }
 }

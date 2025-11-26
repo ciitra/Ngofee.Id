@@ -1,4 +1,8 @@
+using Ngofee.Id.Controllers;
+using Ngofee.Id.Helpers;
+using Ngofee.Id.Models;
 using Ngofee.Id.Views;
+using Ngofee.Id.Views.Admin_View;
 
 namespace Ngofee.Id
 {
@@ -9,16 +13,49 @@ namespace Ngofee.Id
             InitializeComponent();
             btnLogin.MouseEnter += (s, e) => btnLogin.BackgroundImage = Properties.Resources.loginEnter;
             btnLogin.MouseLeave += (s, e) => btnLogin.BackgroundImage = Properties.Resources.loginLeave;
+            btnLogin.Click += btnLogin_Click;
         }
-
         private void V_FormLogin_Load(object sender, EventArgs e)
         {
 
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void btnLogin_Click(object sender, EventArgs e)
         {
+            var auth = new AuthController();
 
+            var user = new UserModel
+            {
+                Username = TBUsername.Text,
+                Password = TBPassword.Text
+            };
+
+            var result = auth.Login(user);
+
+            if (result != null)
+            {
+                AppSession.SetUser(result);
+                MessageBox.Show("Login berhasil!");
+
+                if (result.Role == UserRole.admin)
+                {
+                    // Beranda Admin
+                    var adminHome = new BerandaAdm();
+                    adminHome.Show();
+                }
+                else
+                {
+                    // Beranda Pembeli
+                    var pembeliHome = new BerandaPbl();
+                    pembeliHome.Show();
+                }
+
+                this.Hide();
+            }
+            else
+            {
+                MessageBox.Show("Username atau password salah.");
+            }
         }
 
         private void linkLabelRgt_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
@@ -26,7 +63,6 @@ namespace Ngofee.Id
             Register registerForm = new Register();
             registerForm.Show();
             this.Hide();
-
         }
     }
 }

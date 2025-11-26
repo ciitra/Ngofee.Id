@@ -48,8 +48,8 @@ namespace Ngofee.Id.Controllers
                                     Role = roleEnum,
                                     Username = read.GetString(2),
                                     Password = hashedPassword,
-                                    Email = read.GetString(3),
-                                    NoTelepon = read.GetString(4)
+                                    Email = read.GetString(4),
+                                    NoTelepon = read.GetString(5)
                                 };
 
                                 return loggedInuser;
@@ -76,8 +76,8 @@ namespace Ngofee.Id.Controllers
                 {
                     conn.Open();
                     string query = @"
-                    INSERT INTO users(username, password, email, no_telepon, role)
-                    VALUES(@username, @password, @email, @no_telepon, @role)";
+                    INSERT INTO users(username, password, email, no_telepon, role, created_at)
+                    VALUES(@username, @password, @email, @no_telepon, @role, NOW())";
 
                     string hashPassword = PasswordHelper.HashPassword(user.Password);
 
@@ -87,12 +87,11 @@ namespace Ngofee.Id.Controllers
                         cmd.Parameters.AddWithValue("@password", hashPassword);
                         cmd.Parameters.AddWithValue("@email", user.Email);
                         cmd.Parameters.AddWithValue("@no_telepon", user.NoTelepon);
-                        cmd.Parameters.AddWithValue("@role", user.Role.ToString());
+                        cmd.Parameters.AddWithValue("@role",user.Role.ToString());
 
                         int result = cmd.ExecuteNonQuery();
                         return result > 0;
                     }
-
                 }
             }
             catch (Exception ex)
