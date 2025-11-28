@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             btnSee = new Button();
+            btnProdukAdm = new Button();
             SuspendLayout();
             // 
             // btnSee
@@ -44,6 +45,21 @@
             btnSee.Size = new Size(173, 51);
             btnSee.TabIndex = 0;
             btnSee.UseVisualStyleBackColor = false;
+            btnSee.Click += btnSee_Click;
+            // 
+            // btnProdukAdm
+            // 
+            btnProdukAdm.BackColor = Color.Transparent;
+            btnProdukAdm.FlatAppearance.BorderSize = 0;
+            btnProdukAdm.FlatAppearance.MouseDownBackColor = Color.Transparent;
+            btnProdukAdm.FlatAppearance.MouseOverBackColor = Color.Transparent;
+            btnProdukAdm.FlatStyle = FlatStyle.Flat;
+            btnProdukAdm.Location = new Point(924, 34);
+            btnProdukAdm.Name = "btnProdukAdm";
+            btnProdukAdm.Size = new Size(87, 27);
+            btnProdukAdm.TabIndex = 1;
+            btnProdukAdm.UseVisualStyleBackColor = false;
+            btnProdukAdm.Click += btnProdukAdm_Click;
             // 
             // BerandaAdm
             // 
@@ -51,15 +67,18 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackgroundImage = Properties.Resources.Beranda_Admin;
             ClientSize = new Size(1262, 673);
+            Controls.Add(btnProdukAdm);
             Controls.Add(btnSee);
             Name = "BerandaAdm";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "BerandaAdm";
+            Load += BerandaAdm_Load;
             ResumeLayout(false);
         }
 
         #endregion
 
         private Button btnSee;
+        private Button btnProdukAdm;
     }
 }

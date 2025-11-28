@@ -166,10 +166,10 @@
   <data name="btnSee" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\btnSee.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="LihatProdukPbl" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\LihatProdukPbl.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="btnBeliSekarang" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\btnBeliSekarang.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="LihatProdukPbl" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\LihatProdukPbl (1).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

@@ -41,20 +41,24 @@ namespace Ngofee.Id
                 {
                     // Beranda Admin
                     var adminHome = new BerandaAdm();
+                    this.Hide();
                     adminHome.Show();
                 }
                 else
                 {
                     // Beranda Pembeli
                     var pembeliHome = new BerandaPbl();
+                    this.Hide();
                     pembeliHome.Show();
                 }
+                this.Close();
+                return;
 
-                this.Hide();
             }
             else
             {
                 MessageBox.Show("Username atau password salah.");
+                return;
             }
         }
 

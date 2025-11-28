@@ -149,5 +149,28 @@ namespace Ngofee.Id.Controllers
 
             return products;
         }
+
+        public void DeleteProduct(int productId)
+        {
+            try
+            {
+                using (var conn = new NpgsqlConnection(_dbContext.connStr))
+                {
+                    conn.Open();
+                    string query = "DELETE FROM products WHERE produk_id = @id";
+
+                    using (var cmd = new NpgsqlCommand(query, conn))
+                    {
+                        cmd.Parameters.AddWithValue("@id", productId);
+                        cmd.ExecuteNonQuery();
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error delete product: " + ex.Message);
+            }
+        }
+
     }
 }

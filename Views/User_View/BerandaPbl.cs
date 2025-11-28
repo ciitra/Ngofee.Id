@@ -18,6 +18,8 @@ namespace Ngofee.Id.Views
             InitializeComponent();
             btnBuy.MouseLeave += (s, e) => btnBuy.BackgroundImage = Properties.Resources.btnBuyLeave__1_;
             btnBuy.Click += btnBuy_Click;
+
+            btnProduk.Click += btnProduk_Click;
         }
 
         private void BerandaPbl_Load(object sender, EventArgs e)
@@ -29,6 +31,20 @@ namespace Ngofee.Id.Views
         {
             var berandapbl = new LihatProdukPbl();
             berandapbl.Show();
+            this.Hide();
+        }
+
+        private void btnProduk_Click(object sender, EventArgs e)
+        {
+            var produkPage = new LihatProdukPbl();
+            produkPage.Show();
+            this.Hide();
+        }
+
+        private void btnRiwayatPbl_Click(object sender, EventArgs e)
+        {
+            var riwayatPage = new V_RiwayatTransaksiPbl();
+            riwayatPage.Show();
             this.Hide();
         }
     }

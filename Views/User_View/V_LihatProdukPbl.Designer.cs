@@ -29,6 +29,9 @@
         private void InitializeComponent()
         {
             btnBeliSekarang = new Button();
+            btnHome = new Button();
+            btnRiwayatPbl_lihatproduk = new Button();
+            FlowProduk = new FlowLayoutPanel();
             SuspendLayout();
             // 
             // btnBeliSekarang
@@ -44,22 +47,73 @@
             btnBeliSekarang.TabIndex = 0;
             btnBeliSekarang.UseVisualStyleBackColor = false;
             // 
+            // btnHome
+            // 
+            btnHome.BackColor = Color.Transparent;
+            btnHome.BackgroundImageLayout = ImageLayout.Center;
+            btnHome.FlatAppearance.BorderSize = 0;
+            btnHome.FlatAppearance.MouseDownBackColor = Color.Transparent;
+            btnHome.FlatAppearance.MouseOverBackColor = Color.Transparent;
+            btnHome.FlatStyle = FlatStyle.Flat;
+            btnHome.ForeColor = Color.Transparent;
+            btnHome.Location = new Point(1045, 34);
+            btnHome.Name = "btnHome";
+            btnHome.Size = new Size(94, 29);
+            btnHome.TabIndex = 1;
+            btnHome.UseVisualStyleBackColor = false;
+            btnHome.Click += btnHome_Click;
+            // 
+            // btnRiwayatPbl_lihatproduk
+            // 
+            btnRiwayatPbl_lihatproduk.BackColor = Color.Transparent;
+            btnRiwayatPbl_lihatproduk.BackgroundImageLayout = ImageLayout.Center;
+            btnRiwayatPbl_lihatproduk.FlatAppearance.BorderSize = 0;
+            btnRiwayatPbl_lihatproduk.FlatAppearance.MouseDownBackColor = Color.Transparent;
+            btnRiwayatPbl_lihatproduk.FlatAppearance.MouseOverBackColor = Color.Transparent;
+            btnRiwayatPbl_lihatproduk.FlatStyle = FlatStyle.Flat;
+            btnRiwayatPbl_lihatproduk.ForeColor = Color.Transparent;
+            btnRiwayatPbl_lihatproduk.Location = new Point(688, 34);
+            btnRiwayatPbl_lihatproduk.Name = "btnRiwayatPbl_lihatproduk";
+            btnRiwayatPbl_lihatproduk.Size = new Size(196, 29);
+            btnRiwayatPbl_lihatproduk.TabIndex = 2;
+            btnRiwayatPbl_lihatproduk.UseVisualStyleBackColor = false;
+            btnRiwayatPbl_lihatproduk.Click += btnRiwayatPbl_lihatproduk_Click;
+            // 
+            // FlowProduk
+            // 
+            FlowProduk.AutoScroll = true;
+            FlowProduk.BackColor = Color.Transparent;
+            FlowProduk.Location = new Point(83, 89);
+            FlowProduk.Margin = new Padding(0);
+            FlowProduk.Name = "FlowProduk";
+            FlowProduk.Padding = new Padding(20, 10, 20, 10);
+            FlowProduk.Size = new Size(1100, 497);
+            FlowProduk.TabIndex = 3;
+            FlowProduk.Paint += flowLayoutPanel1_Paint;
+            // 
             // LihatProdukPbl
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackgroundImage = Properties.Resources.LihatProdukPbl;
-            ClientSize = new Size(1262, 673);
+            ClientSize = new Size(1262, 703);
+            Controls.Add(FlowProduk);
+            Controls.Add(btnRiwayatPbl_lihatproduk);
+            Controls.Add(btnHome);
             Controls.Add(btnBeliSekarang);
+            Location = new Point(120, 150);
             Name = "LihatProdukPbl";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "LihatProdukPbl";
-            Load += this.LihatProdukPbl_Load;
+            Load += LihatProdukPbl_Load;
             ResumeLayout(false);
         }
 
         #endregion
 
         private Button btnBeliSekarang;
+        private Button btnHome;
+        private Button btnRiwayatPbl_lihatproduk;
+        private FlowLayoutPanel FlowProduk;
     }
 }

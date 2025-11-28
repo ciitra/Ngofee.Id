@@ -30,5 +30,15 @@ namespace Ngofee.Id.Views
             login.Show();
             this.Hide();
         }
+
+        private void btnLoginLp_Click_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void buttonLoginnew_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
