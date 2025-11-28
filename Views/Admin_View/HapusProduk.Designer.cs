@@ -85,6 +85,7 @@
             Controls.Add(btnHapusProdukAfter);
             Controls.Add(flowHapusProduk);
             Name = "HapusProduk";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "HapusProduk";
             Load += HapusProduk_Load;
             ResumeLayout(false);

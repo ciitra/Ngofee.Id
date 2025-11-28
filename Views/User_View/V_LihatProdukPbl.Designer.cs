@@ -41,11 +41,12 @@
             btnBeliSekarang.BackgroundImageLayout = ImageLayout.Zoom;
             btnBeliSekarang.FlatAppearance.BorderSize = 0;
             btnBeliSekarang.FlatStyle = FlatStyle.Flat;
-            btnBeliSekarang.Location = new Point(488, 609);
+            btnBeliSekarang.Location = new Point(475, 619);
             btnBeliSekarang.Name = "btnBeliSekarang";
             btnBeliSekarang.Size = new Size(296, 63);
             btnBeliSekarang.TabIndex = 0;
             btnBeliSekarang.UseVisualStyleBackColor = false;
+            btnBeliSekarang.Click += btnBeliSekarang_Click;
             // 
             // btnHome
             // 

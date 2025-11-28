@@ -79,5 +79,10 @@ namespace Ngofee.Id.Views.Admin_View
         {
 
         }
+
+        private void pbFotoProduk_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

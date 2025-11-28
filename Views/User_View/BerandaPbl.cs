@@ -18,7 +18,6 @@ namespace Ngofee.Id.Views
             InitializeComponent();
             btnBuy.MouseLeave += (s, e) => btnBuy.BackgroundImage = Properties.Resources.btnBuyLeave__1_;
             btnBuy.Click += btnBuy_Click;
-
             btnProduk.Click += btnProduk_Click;
         }
 

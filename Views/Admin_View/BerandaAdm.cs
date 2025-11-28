@@ -15,7 +15,6 @@ namespace Ngofee.Id.Views.Admin_View
         public BerandaAdm()
         {
             InitializeComponent();
-            btnSee.Click += btnSee_Click;
         }
 
         private void BerandaAdm_Load(object sender, EventArgs e)

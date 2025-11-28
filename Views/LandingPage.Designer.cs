@@ -39,19 +39,18 @@
             btnLoginLp.FlatAppearance.BorderSize = 0;
             btnLoginLp.FlatStyle = FlatStyle.Flat;
             btnLoginLp.ForeColor = Color.Transparent;
-            btnLoginLp.Location = new Point(230, 645);
+            btnLoginLp.Location = new Point(113, 441);
             btnLoginLp.Name = "btnLoginLp";
-            btnLoginLp.Size = new Size(177, 48);
+            btnLoginLp.Size = new Size(182, 59);
             btnLoginLp.TabIndex = 0;
             btnLoginLp.UseVisualStyleBackColor = false;
             btnLoginLp.Click += btnLoginLp_Click_1;
             // 
             // LandingPage
             // 
-            BackColor = Color.White;
+            BackColor = Color.DarkGray;
             BackgroundImage = Properties.Resources.LandingPage1;
-            BackgroundImageLayout = ImageLayout.Zoom;
-            ClientSize = new Size(1902, 1033);
+            ClientSize = new Size(1262, 673);
             Controls.Add(btnLoginLp);
             DoubleBuffered = true;
             Name = "LandingPage";

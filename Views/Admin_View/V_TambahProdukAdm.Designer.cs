@@ -52,6 +52,7 @@
             pbFotoProduk.SizeMode = PictureBoxSizeMode.Zoom;
             pbFotoProduk.TabIndex = 0;
             pbFotoProduk.TabStop = false;
+            pbFotoProduk.Click += pbFotoProduk_Click;
             // 
             // btnPilihGambar
             // 
@@ -161,6 +162,7 @@
             Controls.Add(btnPilihGambar);
             Controls.Add(pbFotoProduk);
             Name = "V_TambahProdukAdm";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "V_TambahProdukAdm";
             Load += V_TambahProdukAdm_Load;
             ((System.ComponentModel.ISupportInitialize)pbFotoProduk).EndInit();

@@ -19,7 +19,6 @@ namespace Ngofee.Id.Views
             InitializeComponent();
             btnRegister.MouseEnter += (s, e) => btnRegister.BackgroundImage = Properties.Resources.registerEnter;
             btnRegister.MouseLeave += (s, e) => btnRegister.BackgroundImage = Properties.Resources.registerLeave;
-            btnRegister.Click += BtnRegister_Click;
 
         }
 
@@ -30,33 +29,46 @@ namespace Ngofee.Id.Views
 
         private void BtnRegister_Click(object sender, EventArgs e)
         {
-            var auth = new AuthController();
-
-            var user = new UserModel
+            try
             {
-                Username = TBUsernameRg.Text,
-                Password = TBPasswordRg.Text,
-                Email = TBEmailRg.Text,
-                NoTelepon = TBNoTeleponRg.Text,
-                Role = UserRole.pembeli // default
-            };
+                var auth = new AuthController();
 
-            bool success = auth.Register(user);
+                var user = new UserModel
+                {
+                    Username = TBUsernameRg.Text,
+                    Password = TBPasswordRg.Text,
+                    Email = TBEmailRg.Text,
+                    NoTelepon = TBNoTeleponRg.Text,
+                    Role = UserRole.pembeli
+                };
 
-            if (success)
-            {
-                MessageBox.Show("Register berhasil!");
+                bool success = auth.Register(user);
 
-                // setelah register, kembali ke login
-                var loginForm = new V_FormLogin();
-                loginForm.Show();
-                this.Hide();
+                if (success)
+                {
+                    MessageBox.Show("Register berhasil!");
+
+                    var loginForm = new V_FormLogin();
+                    loginForm.Show();
+                    this.Hide();
+                }
+                else
+                {
+                    MessageBox.Show("Register gagal!\nPeriksa koneksi atau input.");
+                }
             }
-            else
+            catch (Exception ex)
             {
-                MessageBox.Show("Register gagal!\nPeriksa koneksi atau input.");
+                MessageBox.Show("Terjadi error saat register: " + ex.Message,
+                    "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
+
+
+        private void Register_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

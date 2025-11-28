@@ -96,6 +96,7 @@
             Name = "Register";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Register";
+            Load += Register_Load;
             ResumeLayout(false);
             PerformLayout();
         }

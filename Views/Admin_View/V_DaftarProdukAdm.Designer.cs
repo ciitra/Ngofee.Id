@@ -101,6 +101,7 @@
             Controls.Add(btnTambahProdukBefore);
             Controls.Add(flowAdminProduk);
             Name = "V_DaftarProdukAdm";
+            StartPosition = FormStartPosition.CenterScreen;
             Load += V_DaftarProdukAdm_Load;
             ResumeLayout(false);
         }

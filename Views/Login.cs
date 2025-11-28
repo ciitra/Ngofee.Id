@@ -13,54 +13,61 @@ namespace Ngofee.Id
             InitializeComponent();
             btnLogin.MouseEnter += (s, e) => btnLogin.BackgroundImage = Properties.Resources.loginEnter;
             btnLogin.MouseLeave += (s, e) => btnLogin.BackgroundImage = Properties.Resources.loginLeave;
-            btnLogin.Click += btnLogin_Click;
         }
         private void V_FormLogin_Load(object sender, EventArgs e)
         {
 
         }
-
         private void btnLogin_Click(object sender, EventArgs e)
         {
-            var auth = new AuthController();
-
-            var user = new UserModel
+            try
             {
-                Username = TBUsername.Text,
-                Password = TBPassword.Text
-            };
+                var auth = new AuthController();
 
-            var result = auth.Login(user);
-
-            if (result != null)
-            {
-                AppSession.SetUser(result);
-                MessageBox.Show("Login berhasil!");
-
-                if (result.Role == UserRole.admin)
+                var user = new UserModel
                 {
-                    // Beranda Admin
-                    var adminHome = new BerandaAdm();
-                    this.Hide();
-                    adminHome.Show();
+                    Username = TBUsername.Text,
+                    Password = TBPassword.Text
+                };
+
+                var result = auth.Login(user);
+
+                if (result != null)
+                {
+                    AppSession.SetUser(result);
+                    MessageBox.Show("Login berhasil!");
+
+                    if (result.Role == UserRole.admin)
+                    {
+                        var adminHome = new BerandaAdm();
+                        this.Hide();
+                        adminHome.Show();
+                    }
+                    else
+                    {
+                        var pembeliHome = new BerandaPbl();
+                        this.Hide();
+                        pembeliHome.Show();
+                    }
+
+                    this.Close();
                 }
                 else
                 {
-                    // Beranda Pembeli
-                    var pembeliHome = new BerandaPbl();
-                    this.Hide();
-                    pembeliHome.Show();
+                    MessageBox.Show("Username atau password salah.");
                 }
-                this.Close();
-                return;
-
             }
-            else
+            catch (Exception ex)
             {
-                MessageBox.Show("Username atau password salah.");
-                return;
+                MessageBox.Show(
+                    "Terjadi error saat login:\n" + ex.Message,
+                    "Login Error",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Error
+                );
             }
         }
+
 
         private void linkLabelRgt_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {

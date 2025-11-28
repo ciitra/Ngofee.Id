@@ -72,34 +72,51 @@ namespace Ngofee.Id.Controllers
         {
             try
             {
-                using (NpgsqlConnection conn = new NpgsqlConnection(_dbContext.connStr))
+                using (var conn = new NpgsqlConnection(_dbContext.connStr))
                 {
                     conn.Open();
+
+                    // CEK USERNAME SUDAH ADA
+                    string checkQuery = "SELECT COUNT(*) FROM users WHERE username = @username";
+                    using (var checkCmd = new NpgsqlCommand(checkQuery, conn))
+                    {
+                        checkCmd.Parameters.AddWithValue("@username", user.Username);
+                        long count = (long)checkCmd.ExecuteScalar();
+
+                        if (count > 0)
+                        {
+                            MessageBox.Show("Username sudah digunakan!");
+                            return false;
+                        }
+                    }
+
+                    // HASH PASSWORD
+                    string hashedPassword = PasswordHelper.HashPassword(user.Password);
+
+                    // INSERT DATA
                     string query = @"
-                    INSERT INTO users(username, password, email, no_telepon, role, created_at)
-                    VALUES(@username, @password, @email, @no_telepon, @role, NOW())";
+                INSERT INTO users(username, password, email, no_telepon, role) 
+                VALUES (@username, @password, @mail, @telp, @role)";
 
-                    string hashPassword = PasswordHelper.HashPassword(user.Password);
-
-                    using (NpgsqlCommand cmd = new NpgsqlCommand(query, conn))
+                    using (var cmd = new NpgsqlCommand(query, conn))
                     {
                         cmd.Parameters.AddWithValue("@username", user.Username);
-                        cmd.Parameters.AddWithValue("@password", hashPassword);
-                        cmd.Parameters.AddWithValue("@email", user.Email);
-                        cmd.Parameters.AddWithValue("@no_telepon", user.NoTelepon);
-                        cmd.Parameters.AddWithValue("@role",user.Role.ToString());
+                        cmd.Parameters.AddWithValue("@password", hashedPassword);
+                        cmd.Parameters.AddWithValue("@mail", user.Email);
+                        cmd.Parameters.AddWithValue("@telp", user.NoTelepon);
+                        cmd.Parameters.AddWithValue("@role", user.Role.ToString());
 
-                        int result = cmd.ExecuteNonQuery();
-                        return result > 0;
+                        cmd.ExecuteNonQuery();
                     }
                 }
+
+                return true;
             }
             catch (Exception ex)
             {
-                MessageBox.Show($"Register ERROR: {ex.Message}", "Connection Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Register ERROR: " + ex.Message);
                 return false;
             }
         }
-
     }
 }
