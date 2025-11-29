@@ -30,6 +30,7 @@
         {
             btnSee = new Button();
             btnProdukAdm = new Button();
+            btnTransaksiAdm = new Button();
             SuspendLayout();
             // 
             // btnSee
@@ -61,12 +62,27 @@
             btnProdukAdm.UseVisualStyleBackColor = false;
             btnProdukAdm.Click += btnProdukAdm_Click;
             // 
+            // btnTransaksiAdm
+            // 
+            btnTransaksiAdm.BackColor = Color.Transparent;
+            btnTransaksiAdm.FlatAppearance.BorderSize = 0;
+            btnTransaksiAdm.FlatAppearance.MouseDownBackColor = Color.Transparent;
+            btnTransaksiAdm.FlatAppearance.MouseOverBackColor = Color.Transparent;
+            btnTransaksiAdm.FlatStyle = FlatStyle.Flat;
+            btnTransaksiAdm.Location = new Point(762, 34);
+            btnTransaksiAdm.Name = "btnTransaksiAdm";
+            btnTransaksiAdm.Size = new Size(131, 29);
+            btnTransaksiAdm.TabIndex = 2;
+            btnTransaksiAdm.UseVisualStyleBackColor = false;
+            btnTransaksiAdm.Click += btnTransaksiAdm_Click;
+            // 
             // BerandaAdm
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackgroundImage = Properties.Resources.Beranda_Admin;
             ClientSize = new Size(1262, 673);
+            Controls.Add(btnTransaksiAdm);
             Controls.Add(btnProdukAdm);
             Controls.Add(btnSee);
             Name = "BerandaAdm";
@@ -80,5 +96,6 @@
 
         private Button btnSee;
         private Button btnProdukAdm;
+        private Button btnTransaksiAdm;
     }
 }

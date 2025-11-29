@@ -35,5 +35,12 @@ namespace Ngofee.Id.Views.Admin_View
             halamanberanda.Show();
             this.Hide();
         }
+
+        private void btnTransaksiAdm_Click(object sender, EventArgs e)
+        {
+            var halamanberanda = new V_StatusPesananAdm();
+            halamanberanda.Show();  
+            this.Hide();
+        }
     }
 }

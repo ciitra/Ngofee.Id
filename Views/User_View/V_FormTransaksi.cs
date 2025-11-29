@@ -1,6 +1,7 @@
 ﻿using Ngofee.Id.Controllers;
 using Ngofee.Id.Helpers;
 using Ngofee.Id.Models;
+using Ngofee.Id.Views.Admin_View;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -25,7 +26,7 @@ namespace Ngofee.Id.Views.User_View
             txtPengiriman.Text = "JNE";
             txtPengiriman.ReadOnly = true;
 
-            flowPesanan.Controls.Clear();   
+            flowPesanan.Controls.Clear();
 
             int totalQty = 0;
             int totalHarga = 0;
@@ -158,6 +159,27 @@ namespace Ngofee.Id.Views.User_View
                 MessageBox.Show("Error saat membuat pesanan: " + ex.Message,
                     "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+        }
+
+        private void btnHomeformtransaksi_Click(object sender, EventArgs e)
+        {
+            var homeformtransaksi = new BerandaAdm();
+            homeformtransaksi.Show();
+            this.Hide();
+        }
+
+        private void btnProdukformtransaksi_Click(object sender, EventArgs e)
+        {
+            var produkformtransaksi = new LihatProdukPbl();
+            produkformtransaksi.Show();
+            this.Hide();
+        }
+
+        private void btnRiwayatPesananformtransaksi_Click(object sender, EventArgs e)
+        {
+            var riwayatPesananformtransaksi = new V_RiwayatTransaksiPbl();
+            riwayatPesananformtransaksi.Show();
+            this.Hide();
         }
     }
 }

@@ -118,8 +118,8 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="BerandaPbl1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\BerandaPbl1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="Login (6)" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Login (6).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="BerandaPbl (1)" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\BerandaPbl (1).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -127,8 +127,11 @@
   <data name="Register" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Register (5).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="loginEnter" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\loginLeave.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="btnBeliSekarang" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\btnBeliSekarang.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="LihatProdukPbl" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\LihatProdukPbl (1).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="LoginLeaveLp" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\LoginLeaveLp.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -139,17 +142,23 @@
   <data name="Beranda Admin" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Beranda Admin.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Login (6)" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Login (6).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="BerandaPbl" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\BerandaPbl.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="btnBuyEnter" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\btnBuyEnter.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="loginEnter" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\loginLeave.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Transaksi Masuk (1)" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Transaksi Masuk (1).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="LoginEnterLp" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\LoginEnterLp.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="btnSee" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\btnSee.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="btnBuyLeave (1)" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\..\..\..\..\Downloads\btnBuyLeave (1).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -157,19 +166,16 @@
   <data name="registerLeave" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\REGISTERHOVER.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="BerandaPbl1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\BerandaPbl1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="LandingPage1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\LandingPage1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="registerEnter" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\REGISTERNORMAL.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="btnSee" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\btnSee.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="btnBeliSekarang" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\btnBeliSekarang.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="LihatProdukPbl" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\LihatProdukPbl (1).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="Transaksi Masuk (1)1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Transaksi Masuk (1)1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

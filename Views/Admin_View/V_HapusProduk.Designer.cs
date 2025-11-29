@@ -1,6 +1,6 @@
 ﻿namespace Ngofee.Id.Views.Admin_View
 {
-    partial class HapusProduk
+    partial class V_HapusProduk
     {
         /// <summary>
         /// Required designer variable.
@@ -28,10 +28,12 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(HapusProduk));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(V_HapusProduk));
             flowHapusProduk = new FlowLayoutPanel();
             btnHapusProdukAfter = new Button();
             btnHapusProdukFix = new Button();
+            btnHomehapusproduk = new Button();
+            btnProdukhpsproduk = new Button();
             SuspendLayout();
             // 
             // flowHapusProduk
@@ -75,12 +77,42 @@
             btnHapusProdukFix.UseVisualStyleBackColor = false;
             btnHapusProdukFix.Click += btnHapusProdukFix_Click;
             // 
+            // btnHomehapusproduk
+            // 
+            btnHomehapusproduk.BackColor = Color.Transparent;
+            btnHomehapusproduk.FlatAppearance.BorderSize = 0;
+            btnHomehapusproduk.FlatAppearance.MouseDownBackColor = Color.Transparent;
+            btnHomehapusproduk.FlatAppearance.MouseOverBackColor = Color.Transparent;
+            btnHomehapusproduk.FlatStyle = FlatStyle.Flat;
+            btnHomehapusproduk.Location = new Point(1156, 34);
+            btnHomehapusproduk.Name = "btnHomehapusproduk";
+            btnHomehapusproduk.Size = new Size(66, 29);
+            btnHomehapusproduk.TabIndex = 3;
+            btnHomehapusproduk.UseVisualStyleBackColor = false;
+            btnHomehapusproduk.Click += btnHomehapusproduk_Click;
+            // 
+            // btnProdukhpsproduk
+            // 
+            btnProdukhpsproduk.BackColor = Color.Transparent;
+            btnProdukhpsproduk.FlatAppearance.BorderSize = 0;
+            btnProdukhpsproduk.FlatAppearance.MouseDownBackColor = Color.Transparent;
+            btnProdukhpsproduk.FlatAppearance.MouseOverBackColor = Color.Transparent;
+            btnProdukhpsproduk.FlatStyle = FlatStyle.Flat;
+            btnProdukhpsproduk.Location = new Point(1027, 34);
+            btnProdukhpsproduk.Name = "btnProdukhpsproduk";
+            btnProdukhpsproduk.Size = new Size(83, 29);
+            btnProdukhpsproduk.TabIndex = 4;
+            btnProdukhpsproduk.UseVisualStyleBackColor = false;
+            btnProdukhpsproduk.Click += btnProdukhpsproduk_Click;
+            // 
             // HapusProduk
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackgroundImage = (Image)resources.GetObject("$this.BackgroundImage");
             ClientSize = new Size(1262, 703);
+            Controls.Add(btnProdukhpsproduk);
+            Controls.Add(btnHomehapusproduk);
             Controls.Add(btnHapusProdukFix);
             Controls.Add(btnHapusProdukAfter);
             Controls.Add(flowHapusProduk);
@@ -96,5 +128,7 @@
         private FlowLayoutPanel flowHapusProduk;
         private Button btnHapusProdukAfter;
         private Button btnHapusProdukFix;
+        private Button btnHomehapusproduk;
+        private Button btnProdukhpsproduk;
     }
 }

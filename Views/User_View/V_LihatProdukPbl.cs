@@ -37,7 +37,7 @@ namespace Ngofee.Id.Views.User_View
             foreach (var p in produkList)
             {
                 Panel card = new Panel();
-                card.Size = new Size(500, 200);
+                card.Size = new Size(450, 215);
                 card.BackColor = Color.White;
                 card.Margin = new Padding(10);
                 card.BorderStyle = BorderStyle.FixedSingle;

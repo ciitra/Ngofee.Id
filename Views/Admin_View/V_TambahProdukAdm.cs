@@ -84,5 +84,12 @@ namespace Ngofee.Id.Views.Admin_View
         {
 
         }
+
+        private void btnHometambahproduk_Click(object sender, EventArgs e)
+        {
+            var hometambahproduk = new BerandaAdm();
+            hometambahproduk.Show();
+            this.Hide();
+        }
     }
 }

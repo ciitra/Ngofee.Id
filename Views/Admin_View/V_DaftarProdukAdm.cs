@@ -99,7 +99,7 @@ namespace Ngofee.Id.Views.Admin_View
 
         private void btnHapusProdukBefore_Click(object sender, EventArgs e)
         {
-            var halamanHapus = new HapusProduk();
+            var halamanHapus = new V_HapusProduk();
             halamanHapus.Show();
             this.Hide();
         }

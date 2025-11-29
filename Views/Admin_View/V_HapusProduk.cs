@@ -13,7 +13,7 @@ using System.Windows.Forms;
 
 namespace Ngofee.Id.Views.Admin_View
 {
-    public partial class HapusProduk : Form
+    public partial class V_HapusProduk : Form
     {
         private void HapusProduk_Load(object sender, EventArgs e)
         {
@@ -98,7 +98,7 @@ namespace Ngofee.Id.Views.Admin_View
         }
 
 
-        public HapusProduk()
+        public V_HapusProduk()
         {
             InitializeComponent();
         }
@@ -139,6 +139,20 @@ namespace Ngofee.Id.Views.Admin_View
 
             var daftar = new V_DaftarProdukAdm();
             daftar.Show();
+            this.Hide();
+        }
+
+        private void btnHomehapusproduk_Click(object sender, EventArgs e)
+        {
+            var hpsproduk = new BerandaAdm();
+            hpsproduk.Show();
+            this.Hide();
+        }
+
+        private void btnProdukhpsproduk_Click(object sender, EventArgs e)
+        {
+            var produkhapus = new V_DaftarProdukAdm();
+            produkhapus.Show();
             this.Hide();
         }
     }

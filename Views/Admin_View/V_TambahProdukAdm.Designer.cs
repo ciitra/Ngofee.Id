@@ -38,6 +38,7 @@
             txtKriteriaProduk = new TextBox();
             txtHargaProduk = new TextBox();
             txtStok = new TextBox();
+            btnHometambahproduk = new Button();
             ((System.ComponentModel.ISupportInitialize)pbFotoProduk).BeginInit();
             SuspendLayout();
             // 
@@ -146,12 +147,27 @@
             txtStok.Size = new Size(433, 20);
             txtStok.TabIndex = 8;
             // 
+            // btnHometambahproduk
+            // 
+            btnHometambahproduk.BackColor = Color.Transparent;
+            btnHometambahproduk.FlatAppearance.BorderSize = 0;
+            btnHometambahproduk.FlatAppearance.MouseDownBackColor = Color.Transparent;
+            btnHometambahproduk.FlatAppearance.MouseOverBackColor = Color.Transparent;
+            btnHometambahproduk.FlatStyle = FlatStyle.Flat;
+            btnHometambahproduk.Location = new Point(1154, 38);
+            btnHometambahproduk.Name = "btnHometambahproduk";
+            btnHometambahproduk.Size = new Size(68, 21);
+            btnHometambahproduk.TabIndex = 9;
+            btnHometambahproduk.UseVisualStyleBackColor = false;
+            btnHometambahproduk.Click += btnHometambahproduk_Click;
+            // 
             // V_TambahProdukAdm
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackgroundImage = (Image)resources.GetObject("$this.BackgroundImage");
             ClientSize = new Size(1262, 673);
+            Controls.Add(btnHometambahproduk);
             Controls.Add(txtStok);
             Controls.Add(txtHargaProduk);
             Controls.Add(txtKriteriaProduk);
@@ -181,5 +197,6 @@
         private TextBox txtKriteriaProduk;
         private TextBox txtHargaProduk;
         private TextBox txtStok;
+        private Button btnHometambahproduk;
     }
 }

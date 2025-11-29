@@ -91,6 +91,11 @@
             FlowProduk.Size = new Size(1100, 497);
             FlowProduk.TabIndex = 3;
             FlowProduk.Paint += flowLayoutPanel1_Paint;
+            FlowProduk.FlowDirection = FlowDirection.LeftToRight;
+            FlowProduk.WrapContents = true;
+            FlowProduk.AutoSize = false;
+            FlowProduk.AutoSizeMode = AutoSizeMode.GrowAndShrink;
+
             // 
             // LihatProdukPbl
             // 

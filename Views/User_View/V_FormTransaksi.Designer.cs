@@ -45,6 +45,9 @@
             btnUploadBukti = new Button();
             btnBuatPesanan = new Button();
             qris = new Label();
+            btnHomeformtransaksi = new Button();
+            btnProdukformtransaksi = new Button();
+            btnRiwayatPesananformtransaksi = new Button();
             ((System.ComponentModel.ISupportInitialize)pbQris).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pbBuktiPembayaran).BeginInit();
             SuspendLayout();
@@ -208,7 +211,6 @@
             btnBuatPesanan.TabIndex = 14;
             btnBuatPesanan.UseVisualStyleBackColor = false;
             btnBuatPesanan.Click += btnBuatPesanan_Click;
-
             // 
             // qris
             // 
@@ -222,12 +224,57 @@
             qris.TabIndex = 15;
             qris.Text = "QRIS";
             // 
+            // btnHomeformtransaksi
+            // 
+            btnHomeformtransaksi.BackColor = Color.Transparent;
+            btnHomeformtransaksi.FlatAppearance.BorderSize = 0;
+            btnHomeformtransaksi.FlatAppearance.MouseDownBackColor = Color.Transparent;
+            btnHomeformtransaksi.FlatAppearance.MouseOverBackColor = Color.Transparent;
+            btnHomeformtransaksi.FlatStyle = FlatStyle.Flat;
+            btnHomeformtransaksi.Location = new Point(1059, 35);
+            btnHomeformtransaksi.Name = "btnHomeformtransaksi";
+            btnHomeformtransaksi.Size = new Size(67, 29);
+            btnHomeformtransaksi.TabIndex = 16;
+            btnHomeformtransaksi.UseVisualStyleBackColor = false;
+            btnHomeformtransaksi.Click += btnHomeformtransaksi_Click;
+            // 
+            // btnProdukformtransaksi
+            // 
+            btnProdukformtransaksi.BackColor = Color.Transparent;
+            btnProdukformtransaksi.FlatAppearance.BorderSize = 0;
+            btnProdukformtransaksi.FlatAppearance.MouseDownBackColor = Color.Transparent;
+            btnProdukformtransaksi.FlatAppearance.MouseOverBackColor = Color.Transparent;
+            btnProdukformtransaksi.FlatStyle = FlatStyle.Flat;
+            btnProdukformtransaksi.Location = new Point(927, 35);
+            btnProdukformtransaksi.Name = "btnProdukformtransaksi";
+            btnProdukformtransaksi.Size = new Size(81, 29);
+            btnProdukformtransaksi.TabIndex = 17;
+            btnProdukformtransaksi.UseVisualStyleBackColor = false;
+            btnProdukformtransaksi.Click += btnProdukformtransaksi_Click;
+            // 
+            // btnRiwayatPesananformtransaksi
+            // 
+            btnRiwayatPesananformtransaksi.BackColor = Color.Transparent;
+            btnRiwayatPesananformtransaksi.FlatAppearance.BorderSize = 0;
+            btnRiwayatPesananformtransaksi.FlatAppearance.MouseDownBackColor = Color.Transparent;
+            btnRiwayatPesananformtransaksi.FlatAppearance.MouseOverBackColor = Color.Transparent;
+            btnRiwayatPesananformtransaksi.FlatStyle = FlatStyle.Flat;
+            btnRiwayatPesananformtransaksi.Location = new Point(685, 35);
+            btnRiwayatPesananformtransaksi.Name = "btnRiwayatPesananformtransaksi";
+            btnRiwayatPesananformtransaksi.Size = new Size(198, 29);
+            btnRiwayatPesananformtransaksi.TabIndex = 18;
+            btnRiwayatPesananformtransaksi.UseVisualStyleBackColor = false;
+            btnRiwayatPesananformtransaksi.Click += btnRiwayatPesananformtransaksi_Click;
+            // 
             // V_FormTransaksi
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackgroundImage = (Image)resources.GetObject("$this.BackgroundImage");
             ClientSize = new Size(1262, 710);
+            Controls.Add(btnRiwayatPesananformtransaksi);
+            Controls.Add(btnProdukformtransaksi);
+            Controls.Add(btnHomeformtransaksi);
             Controls.Add(qris);
             Controls.Add(btnBuatPesanan);
             Controls.Add(btnUploadBukti);
@@ -272,5 +319,8 @@
         private Button btnUploadBukti;
         private Button btnBuatPesanan;
         private Label qris;
+        private Button btnHomeformtransaksi;
+        private Button btnProdukformtransaksi;
+        private Button btnRiwayatPesananformtransaksi;
     }
 }
