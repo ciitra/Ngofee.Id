@@ -39,7 +39,14 @@ namespace Ngofee.Id.Views.Admin_View
         private void btnTransaksiAdm_Click(object sender, EventArgs e)
         {
             var halamanberanda = new V_StatusPesananAdm();
-            halamanberanda.Show();  
+            halamanberanda.Show();
+            this.Hide();
+        }
+
+        private void btnLaporanKeuanganberandaadm_Click(object sender, EventArgs e)
+        {
+            var laporanKeuanganberandaadm = new V_LaporanKeuanganAdm();
+            laporanKeuanganberandaadm.Show();
             this.Hide();
         }
     }

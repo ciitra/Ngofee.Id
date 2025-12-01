@@ -31,6 +31,7 @@
             btnSee = new Button();
             btnProdukAdm = new Button();
             btnTransaksiAdm = new Button();
+            btnLaporanKeuanganberandaadm = new Button();
             SuspendLayout();
             // 
             // btnSee
@@ -76,12 +77,27 @@
             btnTransaksiAdm.UseVisualStyleBackColor = false;
             btnTransaksiAdm.Click += btnTransaksiAdm_Click;
             // 
+            // btnLaporanKeuanganberandaadm
+            // 
+            btnLaporanKeuanganberandaadm.BackColor = Color.Transparent;
+            btnLaporanKeuanganberandaadm.FlatAppearance.BorderSize = 0;
+            btnLaporanKeuanganberandaadm.FlatAppearance.MouseDownBackColor = Color.Transparent;
+            btnLaporanKeuanganberandaadm.FlatAppearance.MouseOverBackColor = Color.Transparent;
+            btnLaporanKeuanganberandaadm.FlatStyle = FlatStyle.Flat;
+            btnLaporanKeuanganberandaadm.Location = new Point(515, 34);
+            btnLaporanKeuanganberandaadm.Name = "btnLaporanKeuanganberandaadm";
+            btnLaporanKeuanganberandaadm.Size = new Size(213, 29);
+            btnLaporanKeuanganberandaadm.TabIndex = 3;
+            btnLaporanKeuanganberandaadm.UseVisualStyleBackColor = false;
+            btnLaporanKeuanganberandaadm.Click += btnLaporanKeuanganberandaadm_Click;
+            // 
             // BerandaAdm
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackgroundImage = Properties.Resources.Beranda_Admin;
             ClientSize = new Size(1262, 673);
+            Controls.Add(btnLaporanKeuanganberandaadm);
             Controls.Add(btnTransaksiAdm);
             Controls.Add(btnProdukAdm);
             Controls.Add(btnSee);
@@ -97,5 +113,6 @@
         private Button btnSee;
         private Button btnProdukAdm;
         private Button btnTransaksiAdm;
+        private Button btnLaporanKeuanganberandaadm;
     }
 }

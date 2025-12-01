@@ -3,7 +3,7 @@ using Ngofee.Id.Helpers;
 using Ngofee.Id.Models;
 using System;
 using System.Collections.Generic;
-using System.Drawing;s
+using System.Drawing;
 using System.Linq;
 using System.Windows.Forms;
 
@@ -49,9 +49,6 @@ namespace Ngofee.Id.Views.Admin_View
             card.Margin = new Padding(10);
             card.BorderStyle = BorderStyle.FixedSingle;
 
-            // ==========================
-            //  LEFT SIDE - INFO ORDER
-            // ==========================
             Panel left = new Panel();
             left.Size = new Size(350, 260);
             left.Location = new Point(10, 10);
@@ -64,9 +61,6 @@ namespace Ngofee.Id.Views.Admin_View
             left.Controls.Add(CreateLabel("Status : " + order.Status, 130));
             left.Controls.Add(CreateLabel("Tanggal : " + order.Tanggal.ToString("dd MMM yyyy"), 160));
 
-            // ==========================
-            //  RIGHT SIDE - ITEM PRODUK
-            // ==========================
             FlowLayoutPanel kanan = new FlowLayoutPanel();
             kanan.Location = new Point(380, 10);
             kanan.Size = new Size(700, 230);
@@ -77,9 +71,6 @@ namespace Ngofee.Id.Views.Admin_View
                 kanan.Controls.Add(CreateItemCard(item));
             }
 
-            // ==========================
-            //  BUTTON UPDATE STATUS
-            // ==========================
             OrderController oCtrl = new OrderController();
 
             Button btnProses = new Button()
@@ -127,7 +118,6 @@ namespace Ngofee.Id.Views.Admin_View
                 LoadDataAdmin();
             };
 
-            // ADD KE CARD
             card.Controls.Add(left);
             card.Controls.Add(kanan);
             card.Controls.Add(btnProses);

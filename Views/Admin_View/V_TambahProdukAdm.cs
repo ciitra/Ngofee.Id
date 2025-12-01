@@ -56,7 +56,7 @@ namespace Ngofee.Id.Views.Admin_View
                     Harga = int.Parse(txtHargaProduk.Text),
                     Stok = int.Parse(txtStok.Text),
                     FotoProduk = fotoBytes,
-                    UserId = AppSession.CurrentUser.UserId  // admin inputnya
+                    UserId = AppSession.CurrentUser.UserId
                 };
 
                 ProductController pc = new ProductController();
@@ -64,7 +64,6 @@ namespace Ngofee.Id.Views.Admin_View
 
                 MessageBox.Show("Produk berhasil ditambahkan!");
 
-                // kembali ke halaman daftar produk admin
                 var daftar = new V_DaftarProdukAdm();
                 daftar.Show();
                 this.Hide();

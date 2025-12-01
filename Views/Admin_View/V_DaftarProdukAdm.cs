@@ -13,7 +13,7 @@ using System.Windows.Forms;
 
 namespace Ngofee.Id.Views.Admin_View
 {
-    public partial class V_DaftarProdukAdm : Form
+    public partial class V_DaftarProdukAdm : Form 
     {
         public V_DaftarProdukAdm()
         {
@@ -27,7 +27,6 @@ namespace Ngofee.Id.Views.Admin_View
 
             foreach (var p in produkList)
             {
-                // ============ PANEL CARD ============ //
                 Panel card = new Panel();
                 card.Size = new Size(1000, 180);
                 card.BackColor = Color.White;
@@ -35,7 +34,6 @@ namespace Ngofee.Id.Views.Admin_View
                 card.BorderStyle = BorderStyle.FixedSingle;
                 card.Cursor = Cursors.Hand;
 
-                // ============ GAMBAR PRODUK ============ //
                 PictureBox img = new PictureBox();
                 img.Size = new Size(140, 140);
                 img.Location = new Point(20, 20);
@@ -44,35 +42,30 @@ namespace Ngofee.Id.Views.Admin_View
                 if (p.FotoProduk != null)
                     img.Image = ImageHelper.BinaryToImage(p.FotoProduk);
 
-                // ============ NAMA PRODUK ============ //
                 Label lblNama = new Label();
                 lblNama.Text = p.NamaProduk;
                 lblNama.Font = new Font("Segoe UI", 12, FontStyle.Bold);
                 lblNama.Location = new Point(180, 20);
                 lblNama.AutoSize = true;
 
-                // ============ JENIS KOPI ============ //
                 Label lblJenis = new Label();
                 lblJenis.Text = "Jenis Kopi: " + p.JenisProduk;
                 lblJenis.Font = new Font("Segoe UI", 10, FontStyle.Regular);
                 lblJenis.Location = new Point(180, 50);
                 lblJenis.AutoSize = true;
 
-                // ============ KRITERIA ============ //
                 Label lblKriteria = new Label();
                 lblKriteria.Text = "Kriteria: " + p.KriteriaProduk;
                 lblKriteria.Font = new Font("Segoe UI", 10, FontStyle.Regular);
                 lblKriteria.Location = new Point(180, 75);
                 lblKriteria.AutoSize = true;
 
-                // ============ HARGA ============ //
                 Label lblHarga = new Label();
                 lblHarga.Text = "Rp. " + p.Harga.ToString("N0");
                 lblHarga.Font = new Font("Segoe UI", 11, FontStyle.Bold);
                 lblHarga.Location = new Point(800, 130);
                 lblHarga.AutoSize = true;
 
-                // ============ MASUKKAN KE CARD ============ //
                 card.Controls.Add(img);
                 card.Controls.Add(lblNama);
                 card.Controls.Add(lblJenis);
@@ -80,7 +73,6 @@ namespace Ngofee.Id.Views.Admin_View
                 card.Controls.Add(lblHarga);
 
 
-                // ============ MASUKKAN KE FLOWLAYOUT ============ //
                 flowAdminProduk.Controls.Add(card);
             }
         }
@@ -92,7 +84,7 @@ namespace Ngofee.Id.Views.Admin_View
 
         private void btnTambahProdukBefore_Click(object sender, EventArgs e)
         {
-            var tambah = new V_TambahProdukAdm(); // form tambah produk admin
+            var tambah = new V_TambahProdukAdm();
             tambah.Show();
             this.Hide();
         }

@@ -191,7 +191,6 @@ namespace Ngofee.Id.Controllers
                             {
                                 int orderId = rd.GetInt32(0);
 
-                                // cek apakah order sudah ada
                                 var existing = orders.FirstOrDefault(o => o.OrderId == orderId);
 
                                 if (existing == null)
@@ -208,7 +207,6 @@ namespace Ngofee.Id.Controllers
                                     orders.Add(existing);
                                 }
 
-                                // Tambahkan item ke dalam order
                                 existing.Items.Add(new OrderHistoryItem
                                 {
                                     ProdukId = rd.GetInt32(3),
