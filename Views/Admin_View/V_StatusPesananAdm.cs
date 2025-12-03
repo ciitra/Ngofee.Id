@@ -174,5 +174,26 @@ namespace Ngofee.Id.Views.Admin_View
 
             return p;
         }
+
+        private void btnLaporanKeuanganstatuspesanan_Click(object sender, EventArgs e)
+        {
+            var laporanKeuanganstatuspesanan = new V_LaporanKeuanganAdm();
+            laporanKeuanganstatuspesanan.Show();
+            this.Hide();
+        }
+
+        private void btnProdukstatuspesanan_Click(object sender, EventArgs e)
+        {
+            var produkstatuspesanan = new V_StatusPesananAdm();
+            produkstatuspesanan.Show();
+            this.Hide();
+        }
+
+        private void btnHomestatuspesanan_Click(object sender, EventArgs e)
+        {
+            var homestatuspesanan = new BerandaAdm();
+            homestatuspesanan.Show();
+            this.Hide();
+        }
     }
 }

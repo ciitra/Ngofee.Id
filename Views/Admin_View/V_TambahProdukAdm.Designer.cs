@@ -39,6 +39,8 @@
             txtHargaProduk = new TextBox();
             txtStok = new TextBox();
             btnHometambahproduk = new Button();
+            btnTransaksitambahproduk = new Button();
+            btnLaporanKeuangantambahproduk = new Button();
             ((System.ComponentModel.ISupportInitialize)pbFotoProduk).BeginInit();
             SuspendLayout();
             // 
@@ -161,12 +163,42 @@
             btnHometambahproduk.UseVisualStyleBackColor = false;
             btnHometambahproduk.Click += btnHometambahproduk_Click;
             // 
+            // btnTransaksitambahproduk
+            // 
+            btnTransaksitambahproduk.BackColor = Color.Transparent;
+            btnTransaksitambahproduk.FlatAppearance.BorderSize = 0;
+            btnTransaksitambahproduk.FlatAppearance.MouseDownBackColor = Color.Transparent;
+            btnTransaksitambahproduk.FlatAppearance.MouseOverBackColor = Color.Transparent;
+            btnTransaksitambahproduk.FlatStyle = FlatStyle.Flat;
+            btnTransaksitambahproduk.Location = new Point(870, 38);
+            btnTransaksitambahproduk.Name = "btnTransaksitambahproduk";
+            btnTransaksitambahproduk.Size = new Size(111, 21);
+            btnTransaksitambahproduk.TabIndex = 10;
+            btnTransaksitambahproduk.UseVisualStyleBackColor = false;
+            btnTransaksitambahproduk.Click += btnTransaksitambahproduk_Click;
+            // 
+            // btnLaporanKeuangantambahproduk
+            // 
+            btnLaporanKeuangantambahproduk.BackColor = Color.Transparent;
+            btnLaporanKeuangantambahproduk.FlatAppearance.BorderSize = 0;
+            btnLaporanKeuangantambahproduk.FlatAppearance.MouseDownBackColor = Color.Transparent;
+            btnLaporanKeuangantambahproduk.FlatAppearance.MouseOverBackColor = Color.Transparent;
+            btnLaporanKeuangantambahproduk.FlatStyle = FlatStyle.Flat;
+            btnLaporanKeuangantambahproduk.Location = new Point(615, 38);
+            btnLaporanKeuangantambahproduk.Name = "btnLaporanKeuangantambahproduk";
+            btnLaporanKeuangantambahproduk.Size = new Size(213, 21);
+            btnLaporanKeuangantambahproduk.TabIndex = 11;
+            btnLaporanKeuangantambahproduk.UseVisualStyleBackColor = false;
+            btnLaporanKeuangantambahproduk.Click += btnLaporanKeuangantambahproduk_Click;
+            // 
             // V_TambahProdukAdm
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackgroundImage = (Image)resources.GetObject("$this.BackgroundImage");
             ClientSize = new Size(1262, 673);
+            Controls.Add(btnLaporanKeuangantambahproduk);
+            Controls.Add(btnTransaksitambahproduk);
             Controls.Add(btnHometambahproduk);
             Controls.Add(txtStok);
             Controls.Add(txtHargaProduk);
@@ -198,5 +230,7 @@
         private TextBox txtHargaProduk;
         private TextBox txtStok;
         private Button btnHometambahproduk;
+        private Button btnTransaksitambahproduk;
+        private Button btnLaporanKeuangantambahproduk;
     }
 }

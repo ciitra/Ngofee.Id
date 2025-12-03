@@ -32,6 +32,9 @@
             lblHarian = new Label();
             lblBulanan = new Label();
             flowLaporan = new FlowLayoutPanel();
+            btnTranskasiLaporan = new Button();
+            btnProdukLaporan = new Button();
+            btnHomeLaporan = new Button();
             SuspendLayout();
             // 
             // lblHarian
@@ -66,12 +69,54 @@
             flowLaporan.Size = new Size(1050, 409);
             flowLaporan.TabIndex = 2;
             // 
+            // btnTranskasiLaporan
+            // 
+            btnTranskasiLaporan.BackColor = Color.Transparent;
+            btnTranskasiLaporan.BackgroundImageLayout = ImageLayout.None;
+            btnTranskasiLaporan.FlatAppearance.BorderSize = 0;
+            btnTranskasiLaporan.FlatStyle = FlatStyle.Flat;
+            btnTranskasiLaporan.Location = new Point(863, 34);
+            btnTranskasiLaporan.Name = "btnTranskasiLaporan";
+            btnTranskasiLaporan.Size = new Size(122, 29);
+            btnTranskasiLaporan.TabIndex = 3;
+            btnTranskasiLaporan.UseVisualStyleBackColor = false;
+            btnTranskasiLaporan.Click += btnTranskasiLaporan_Click;
+            // 
+            // btnProdukLaporan
+            // 
+            btnProdukLaporan.BackColor = Color.Transparent;
+            btnProdukLaporan.BackgroundImageLayout = ImageLayout.None;
+            btnProdukLaporan.FlatAppearance.BorderSize = 0;
+            btnProdukLaporan.FlatStyle = FlatStyle.Flat;
+            btnProdukLaporan.Location = new Point(1023, 34);
+            btnProdukLaporan.Name = "btnProdukLaporan";
+            btnProdukLaporan.Size = new Size(89, 29);
+            btnProdukLaporan.TabIndex = 4;
+            btnProdukLaporan.UseVisualStyleBackColor = false;
+            btnProdukLaporan.Click += btnProdukLaporan_Click;
+            // 
+            // btnHomeLaporan
+            // 
+            btnHomeLaporan.BackColor = Color.Transparent;
+            btnHomeLaporan.BackgroundImageLayout = ImageLayout.None;
+            btnHomeLaporan.FlatAppearance.BorderSize = 0;
+            btnHomeLaporan.FlatStyle = FlatStyle.Flat;
+            btnHomeLaporan.Location = new Point(1157, 34);
+            btnHomeLaporan.Name = "btnHomeLaporan";
+            btnHomeLaporan.Size = new Size(65, 29);
+            btnHomeLaporan.TabIndex = 5;
+            btnHomeLaporan.UseVisualStyleBackColor = false;
+            btnHomeLaporan.Click += btnHomeLaporan_Click;
+            // 
             // V_LaporanKeuanganAdm
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackgroundImage = (Image)resources.GetObject("$this.BackgroundImage");
             ClientSize = new Size(1262, 673);
+            Controls.Add(btnHomeLaporan);
+            Controls.Add(btnProdukLaporan);
+            Controls.Add(btnTranskasiLaporan);
             Controls.Add(flowLaporan);
             Controls.Add(lblBulanan);
             Controls.Add(lblHarian);
@@ -87,5 +132,8 @@
         private Label lblHarian;
         private Label lblBulanan;
         private FlowLayoutPanel flowLaporan;
+        private Button btnTranskasiLaporan;
+        private Button btnProdukLaporan;
+        private Button btnHomeLaporan;
     }
 }

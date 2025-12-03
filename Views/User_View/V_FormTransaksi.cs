@@ -136,14 +136,13 @@ namespace Ngofee.Id.Views.User_View
                 };
 
                 var oCtrl = new OrderController();
-                var oiCtrl = new OrderItemController();
 
                 int newOrderId = oCtrl.CreateOrder(order);
 
                 foreach (var item in Order.Items)
                 {
                     item.OrderId = newOrderId;
-                    oiCtrl.InsertOrderItem(item);
+                    oCtrl.InsertOrderItem(item);
                 }
 
                 MessageBox.Show("Pesanan berhasil dibuat! Silakan tunggu konfirmasi admin.");

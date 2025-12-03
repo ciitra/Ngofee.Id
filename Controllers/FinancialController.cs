@@ -1,58 +1,52 @@
 ﻿using Ngofee.Id.Database;
+using Ngofee.Id.Iinterfaces;
 using Ngofee.Id.Models;
 using Npgsql;
 using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Ngofee.Id.Controllers
 {
-    public class FinancialController
+    public class FinancialController : BaseController, IFinancial
     {
-        private DbContext _db;
-
-        public FinancialController()
+        public FinancialController() : base()
         {
-            _db = new DbContext();
         }
 
         public IncomeSummary GetIncomeSummary()
         {
             IncomeSummary summary = new IncomeSummary();
 
-            using (var conn = new NpgsqlConnection(_db.connStr))
+            try
             {
-                conn.Open();
-
-                string q1 = @"SELECT SUM(oi.subtotal) 
-                              FROM order_items oi
-                              JOIN orders o ON oi.order_id = o.order_id
-                              WHERE DATE(o.order_date) = CURRENT_DATE;";
-
-                using (var cmd = new NpgsqlCommand(q1, conn))
+                using (var conn = CreateConnection())
                 {
-                    object result = cmd.ExecuteScalar();
-                    summary.PendapatanHarian = result == DBNull.Value ? 0 : Convert.ToDecimal(result);
+                    conn.Open();
+
+                    string dailyQuery = @"
+                        SELECT SUM(oi.subtotal)
+                        FROM order_items oi
+                        JOIN orders o ON oi.order_id = o.order_id
+                        WHERE DATE(o.order_date) = CURRENT_DATE";
+
+                    summary.PendapatanHarian = ExecuteScalarDecimal(conn, dailyQuery);
+                    summary.TanggalHariIni = DateTime.Now.ToString("dd MMM yyyy");
+
+                    string monthlyQuery = @"
+                        SELECT SUM(oi.subtotal)
+                        FROM order_items oi
+                        JOIN orders o ON oi.order_id = o.order_id
+                        WHERE DATE_PART('month', o.order_date) = DATE_PART('month', CURRENT_DATE)
+                          AND DATE_PART('year', o.order_date) = DATE_PART('year', CURRENT_DATE)";
+
+                    summary.PendapatanBulanan = ExecuteScalarDecimal(conn, monthlyQuery);
+                    summary.BulanIni = DateTime.Now.ToString("MMMM yyyy");
                 }
-
-                summary.TanggalHariIni = DateTime.Now.ToString("dd MMM yyyy");
-
-                string q2 = @"SELECT SUM(oi.subtotal)
-                              FROM order_items oi
-                              JOIN orders o ON oi.order_id = o.order_id
-                              WHERE DATE_PART('month', o.order_date) = DATE_PART('month', CURRENT_DATE)
-                                AND DATE_PART('year', o.order_date) = DATE_PART('year', CURRENT_DATE);";
-
-                using (var cmd = new NpgsqlCommand(q2, conn))
-                {
-                    object result = cmd.ExecuteScalar();
-                    summary.PendapatanBulanan = result == DBNull.Value ? 0 : Convert.ToDecimal(result);
-                }
-
-                summary.BulanIni = DateTime.Now.ToString("MMMM yyyy");
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Summary Error: " + ex.Message);
             }
 
             return summary;
@@ -64,60 +58,71 @@ namespace Ngofee.Id.Controllers
 
             try
             {
-                using (var conn = new NpgsqlConnection(_db.connStr))
+                using (var conn = CreateConnection())
                 {
                     conn.Open();
 
-                    // 1) Subquery: hitung total & list produk per order
-                    string q = @"
-                SELECT 
-                    agg.order_id,
-                    agg.order_date,
-                    agg.status,
-                    agg.produk_list,
-                    agg.total_income,
-                    p.foto_produk
-                FROM (
-                    SELECT
-                        o.order_id,
-                        o.order_date,
-                        o.status,
-                        STRING_AGG(p.nama_produk, ', ') AS produk_list,
-                        SUM(oi.subtotal) AS total_income,
-                        MIN(oi.produk_id) AS first_produk_id     -- aman, integer
-                    FROM order_items oi
-                    JOIN orders o ON oi.order_id = o.order_id
-                    JOIN products p ON oi.produk_id = p.produk_id
-                    GROUP BY o.order_id, o.order_date, o.status
-                ) agg
-                JOIN products p ON p.produk_id = agg.first_produk_id
-                ORDER BY agg.order_date DESC;";
+                    string query = @"
+                        SELECT 
+                            agg.order_id,
+                            agg.order_date,
+                            agg.status,
+                            agg.produk_list,
+                            agg.total_income,
+                            p.foto_produk
+                        FROM (
+                            SELECT
+                                o.order_id,
+                                o.order_date,
+                                o.status,
+                                STRING_AGG(p.nama_produk, ', ') AS produk_list,
+                                SUM(oi.subtotal) AS total_income,
+                                MIN(oi.produk_id) AS first_produk_id
+                            FROM order_items oi
+                            JOIN orders o ON oi.order_id = o.order_id
+                            JOIN products p ON oi.produk_id = p.produk_id
+                            GROUP BY o.order_id, o.order_date, o.status
+                        ) agg
+                        JOIN products p ON p.produk_id = agg.first_produk_id
+                        ORDER BY agg.order_date DESC";
 
-                    using (var cmd = new NpgsqlCommand(q, conn))
+                    using (var cmd = new NpgsqlCommand(query, conn))
                     using (var rd = cmd.ExecuteReader())
                     {
                         while (rd.Read())
                         {
-                            list.Add(new AdminFinancialReport
-                            {
-                                // Kalau di model kamu ada OrderId, boleh diisi:
-                                // OrderId = rd.GetInt32(0),
-                                Tanggal = rd.GetDateTime(1),
-                                Status = rd.GetString(2),
-                                ProdukList = rd.GetString(3),
-                                TotalIncome = rd.GetDecimal(4),
-                                FotoProduk = rd["foto_produk"] as byte[]
-                            });
+                            list.Add(MapFinancialReport(rd));
                         }
                     }
                 }
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Error load riwayat keuangan: " + ex.Message);
+                MessageBox.Show("History Error: " + ex.Message);
             }
 
             return list;
+        }
+
+        private decimal ExecuteScalarDecimal(NpgsqlConnection conn, string query)
+        {
+            using (var cmd = new NpgsqlCommand(query, conn))
+            {
+                object result = cmd.ExecuteScalar();
+                return result == DBNull.Value ? 0 : Convert.ToDecimal(result);
+            }
+        }
+
+        private AdminFinancialReport MapFinancialReport(NpgsqlDataReader rd)
+        {
+            return new AdminFinancialReport
+            {
+                Tanggal = rd.GetDateTime(1),
+                Status = rd.GetString(2),
+                ProdukList = rd.GetString(3),
+                TotalIncome = rd.GetDecimal(4),
+                FotoProduk = rd["foto_produk"] as byte[]
+            };
         }
     }
 }

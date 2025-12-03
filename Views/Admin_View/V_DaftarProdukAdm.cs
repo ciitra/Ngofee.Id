@@ -13,7 +13,7 @@ using System.Windows.Forms;
 
 namespace Ngofee.Id.Views.Admin_View
 {
-    public partial class V_DaftarProdukAdm : Form 
+    public partial class V_DaftarProdukAdm : Form
     {
         public V_DaftarProdukAdm()
         {
@@ -100,6 +100,13 @@ namespace Ngofee.Id.Views.Admin_View
         {
             var daftarproduct = new BerandaAdm();
             daftarproduct.Show();
+            this.Hide();
+        }
+
+        private void btnTransaksidaftarproduk_Click(object sender, EventArgs e)
+        {
+            var transaksidaftarproduk = new V_StatusPesananAdm();
+            transaksidaftarproduk.Show();
             this.Hide();
         }
     }

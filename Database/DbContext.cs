@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Ngofee.Id.Database
 {
-    internal class DbContext
+    public class DbContext
     {
         public string? connStr;
 

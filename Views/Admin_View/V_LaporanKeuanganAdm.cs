@@ -84,5 +84,26 @@ namespace Ngofee.Id.Views.Admin_View
 
             return card;
         }
+
+        private void btnTranskasiLaporan_Click(object sender, EventArgs e)
+        {
+            var transkasiLaporan = new V_StatusPesananAdm();
+            transkasiLaporan.Show();
+            this.Hide();
+        }
+
+        private void btnProdukLaporan_Click(object sender, EventArgs e)
+        {
+            var produkLaporan = new V_DaftarProdukAdm();
+            produkLaporan.Show();
+            this.Hide();
+        }
+
+        private void btnHomeLaporan_Click(object sender, EventArgs e)
+        {
+            var homeLaporan = new BerandaAdm();
+            homeLaporan.Show();
+            this.Hide();
+        }
     }
 }

@@ -13,5 +13,6 @@ namespace Ngofee.Id.Iinterfaces
 
         List<Product> GetByUserId(int userId);
         List<Product> GetAllProduct();
+        void DeleteProduct(int productId);
     }
 }

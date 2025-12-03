@@ -90,5 +90,19 @@ namespace Ngofee.Id.Views.Admin_View
             hometambahproduk.Show();
             this.Hide();
         }
+
+        private void btnTransaksitambahproduk_Click(object sender, EventArgs e)
+        {
+            var transaksitambahproduk = new V_StatusPesananAdm();
+            transaksitambahproduk.Show();
+            this.Hide();
+        }
+
+        private void btnLaporanKeuangantambahproduk_Click(object sender, EventArgs e)
+        {
+            var laporanKeuangantambahproduk = new V_LaporanKeuanganAdm();
+            laporanKeuangantambahproduk.Show();
+            this.Hide();
+        }
     }
 }

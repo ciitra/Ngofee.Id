@@ -33,6 +33,8 @@
             btnTambahProdukBefore = new Button();
             btnHapusProdukBefore = new Button();
             btnHomeDaftarProdukAdm = new Button();
+            btnTransaksidaftarproduk = new Button();
+            btnLaporanKeuangandaftarproduk = new Button();
             SuspendLayout();
             // 
             // flowAdminProduk
@@ -90,12 +92,41 @@
             btnHomeDaftarProdukAdm.UseVisualStyleBackColor = false;
             btnHomeDaftarProdukAdm.Click += btnHomeDaftarProdukAdm_Click;
             // 
+            // btnTransaksidaftarproduk
+            // 
+            btnTransaksidaftarproduk.BackColor = Color.Transparent;
+            btnTransaksidaftarproduk.FlatAppearance.BorderSize = 0;
+            btnTransaksidaftarproduk.FlatAppearance.MouseDownBackColor = Color.Transparent;
+            btnTransaksidaftarproduk.FlatAppearance.MouseOverBackColor = Color.Transparent;
+            btnTransaksidaftarproduk.FlatStyle = FlatStyle.Flat;
+            btnTransaksidaftarproduk.Location = new Point(865, 34);
+            btnTransaksidaftarproduk.Name = "btnTransaksidaftarproduk";
+            btnTransaksidaftarproduk.Size = new Size(119, 30);
+            btnTransaksidaftarproduk.TabIndex = 4;
+            btnTransaksidaftarproduk.UseVisualStyleBackColor = false;
+            btnTransaksidaftarproduk.Click += btnTransaksidaftarproduk_Click;
+            // 
+            // btnLaporanKeuangandaftarproduk
+            // 
+            btnLaporanKeuangandaftarproduk.BackColor = Color.Transparent;
+            btnLaporanKeuangandaftarproduk.FlatAppearance.BorderSize = 0;
+            btnLaporanKeuangandaftarproduk.FlatAppearance.MouseDownBackColor = Color.Transparent;
+            btnLaporanKeuangandaftarproduk.FlatAppearance.MouseOverBackColor = Color.Transparent;
+            btnLaporanKeuangandaftarproduk.FlatStyle = FlatStyle.Flat;
+            btnLaporanKeuangandaftarproduk.Location = new Point(616, 34);
+            btnLaporanKeuangandaftarproduk.Name = "btnLaporanKeuangandaftarproduk";
+            btnLaporanKeuangandaftarproduk.Size = new Size(210, 30);
+            btnLaporanKeuangandaftarproduk.TabIndex = 4;
+            btnLaporanKeuangandaftarproduk.UseVisualStyleBackColor = false;
+            // 
             // V_DaftarProdukAdm
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackgroundImage = (Image)resources.GetObject("$this.BackgroundImage");
             ClientSize = new Size(1262, 673);
+            Controls.Add(btnLaporanKeuangandaftarproduk);
+            Controls.Add(btnTransaksidaftarproduk);
             Controls.Add(btnHomeDaftarProdukAdm);
             Controls.Add(btnHapusProdukBefore);
             Controls.Add(btnTambahProdukBefore);
@@ -112,5 +143,7 @@
         private Button btnTambahProdukBefore;
         private Button btnHapusProdukBefore;
         private Button btnHomeDaftarProdukAdm;
+        private Button btnTransaksidaftarproduk;
+        private Button btnLaporanKeuangandaftarproduk;
     }
 }

@@ -39,7 +39,7 @@ namespace Ngofee.Id.Views.Admin_View
                 Panel card = new Panel();
                 card.Size = new Size(1000, 180);
                 card.BackColor = Color.White;
-                card.Location = new Point(45, 0); 
+                card.Location = new Point(45, 0);
                 card.Margin = new Padding(0);
 
                 PictureBox img = new PictureBox();
@@ -142,6 +142,20 @@ namespace Ngofee.Id.Views.Admin_View
         {
             var produkhapus = new V_DaftarProdukAdm();
             produkhapus.Show();
+            this.Hide();
+        }
+
+        private void btnTransaksihpsproduk_Click(object sender, EventArgs e)
+        {
+            var transaksihpsproduk = new V_StatusPesananAdm();
+            transaksihpsproduk.Show();
+            this.Hide();
+        }
+
+        private void btnLaporanKeuanganhpsproduk_Click(object sender, EventArgs e)
+        {
+            var laporanKeuanganhpsproduk = new V_LaporanKeuanganAdm();
+            laporanKeuanganhpsproduk.Show();
             this.Hide();
         }
     }

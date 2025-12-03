@@ -34,6 +34,8 @@
             btnHapusProdukFix = new Button();
             btnHomehapusproduk = new Button();
             btnProdukhpsproduk = new Button();
+            btnTransaksihpsproduk = new Button();
+            btnLaporanKeuanganhpsproduk = new Button();
             SuspendLayout();
             // 
             // flowHapusProduk
@@ -105,18 +107,48 @@
             btnProdukhpsproduk.UseVisualStyleBackColor = false;
             btnProdukhpsproduk.Click += btnProdukhpsproduk_Click;
             // 
-            // HapusProduk
+            // btnTransaksihpsproduk
+            // 
+            btnTransaksihpsproduk.BackColor = Color.Transparent;
+            btnTransaksihpsproduk.FlatAppearance.BorderSize = 0;
+            btnTransaksihpsproduk.FlatAppearance.MouseDownBackColor = Color.Transparent;
+            btnTransaksihpsproduk.FlatAppearance.MouseOverBackColor = Color.Transparent;
+            btnTransaksihpsproduk.FlatStyle = FlatStyle.Flat;
+            btnTransaksihpsproduk.Location = new Point(870, 34);
+            btnTransaksihpsproduk.Name = "btnTransaksihpsproduk";
+            btnTransaksihpsproduk.Size = new Size(113, 29);
+            btnTransaksihpsproduk.TabIndex = 5;
+            btnTransaksihpsproduk.UseVisualStyleBackColor = false;
+            btnTransaksihpsproduk.Click += btnTransaksihpsproduk_Click;
+            // 
+            // btnLaporanKeuanganhpsproduk
+            // 
+            btnLaporanKeuanganhpsproduk.BackColor = Color.Transparent;
+            btnLaporanKeuanganhpsproduk.FlatAppearance.BorderSize = 0;
+            btnLaporanKeuanganhpsproduk.FlatAppearance.MouseDownBackColor = Color.Transparent;
+            btnLaporanKeuanganhpsproduk.FlatAppearance.MouseOverBackColor = Color.Transparent;
+            btnLaporanKeuanganhpsproduk.FlatStyle = FlatStyle.Flat;
+            btnLaporanKeuanganhpsproduk.Location = new Point(608, 34);
+            btnLaporanKeuanganhpsproduk.Name = "btnLaporanKeuanganhpsproduk";
+            btnLaporanKeuanganhpsproduk.Size = new Size(222, 29);
+            btnLaporanKeuanganhpsproduk.TabIndex = 6;
+            btnLaporanKeuanganhpsproduk.UseVisualStyleBackColor = false;
+            btnLaporanKeuanganhpsproduk.Click += btnLaporanKeuanganhpsproduk_Click;
+            // 
+            // V_HapusProduk
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackgroundImage = (Image)resources.GetObject("$this.BackgroundImage");
             ClientSize = new Size(1262, 703);
+            Controls.Add(btnLaporanKeuanganhpsproduk);
+            Controls.Add(btnTransaksihpsproduk);
             Controls.Add(btnProdukhpsproduk);
             Controls.Add(btnHomehapusproduk);
             Controls.Add(btnHapusProdukFix);
             Controls.Add(btnHapusProdukAfter);
             Controls.Add(flowHapusProduk);
-            Name = "HapusProduk";
+            Name = "V_HapusProduk";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "HapusProduk";
             Load += HapusProduk_Load;
@@ -130,5 +162,7 @@
         private Button btnHapusProdukFix;
         private Button btnHomehapusproduk;
         private Button btnProdukhpsproduk;
+        private Button btnTransaksihpsproduk;
+        private Button btnLaporanKeuanganhpsproduk;
     }
 }
