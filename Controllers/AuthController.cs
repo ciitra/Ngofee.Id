@@ -96,6 +96,11 @@ namespace Ngofee.Id.Controllers
             }
         }
 
+        public override string ControllerInfo()
+        {
+            return "Ini adalah Auth Controller";
+        }
+
 
         private bool IsUsernameExist(NpgsqlConnection conn, string username)
         {

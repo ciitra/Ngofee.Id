@@ -185,6 +185,7 @@
             pbBuktiPembayaran.Location = new Point(947, 348);
             pbBuktiPembayaran.Name = "pbBuktiPembayaran";
             pbBuktiPembayaran.Size = new Size(194, 135);
+            pbBuktiPembayaran.SizeMode = PictureBoxSizeMode.Zoom;
             pbBuktiPembayaran.TabIndex = 12;
             pbBuktiPembayaran.TabStop = false;
             // 

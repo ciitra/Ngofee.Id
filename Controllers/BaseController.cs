@@ -21,5 +21,11 @@ namespace Ngofee.Id.Controllers
         {
             return new NpgsqlConnection(_dbContext.connStr);
         }
+
+        public virtual string ControllerInfo()
+        {
+            return "Ini adalah Base Controller";
+        }
+
     }
 }
